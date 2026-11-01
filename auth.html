@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login / Sign Up — Meridian Corporate</title>
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">☎ +1 (555) 010-2030</div>
+      <div class="topbar-right">
+        <a href="track.html">Track Order</a>
+        <a href="auth.html" class="topbar-btn">Login / Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo"><span class="logo-mark">M</span> Meridian<span class="logo-accent">Corporate</span></a>
+      <nav class="main-nav" id="mainNav">
+        <div class="nav-item has-drop">
+          <a href="service.html?id=establishment" class="nav-link">Company Registration <span class="caret">▼</span></a>
+          <div class="dropdown">
+            <a href="service.html?id=establishment">Company Establishment</a>
+            <a href="service.html?id=dissolution">Company Dissolution</a>
+            <a href="service.html?id=liquidation">Liquidation Termination</a>
+            <span class="drop-title">Changes</span>
+            <a href="service.html?id=board-renewal">Board of Directors Renewal</a>
+            <a href="service.html?id=auditor-renewal">Auditor Renewal</a>
+            <a href="service.html?id=address-change">Address Change / Postal Code</a>
+            <a href="service.html?id=pl-balance">P&amp;L Balance Approval</a>
+          </div>
+        </div>
+        <div class="nav-item has-drop">
+          <a href="service.html?id=brand" class="nav-link">Brand Registration <span class="caret">▼</span></a>
+          <div class="dropdown">
+            <a href="service.html?id=brand">Brand Registration</a>
+            <a href="service.html?id=industrial-design">Industrial Design Registration</a>
+            <a href="service.html?id=brand-renewal">Brand Renewal</a>
+            <a href="service.html?id=design-renewal">Industrial Design Renewal</a>
+          </div>
+        </div>
+        <div class="nav-item has-drop">
+          <a href="service.html?id=official-gazette" class="nav-link">Newspaper Services <span class="caret">▼</span></a>
+          <div class="dropdown">
+            <a href="service.html?id=official-gazette">Official Gazette</a>
+            <a href="service.html?id=circulating-newspaper">Widely-Circulated Newspaper</a>
+          </div>
+        </div>
+        <div class="nav-item has-drop">
+          <a href="service.html?id=office-seal" class="nav-link">Tax Services <span class="caret">▼</span></a>
+          <div class="dropdown">
+            <a href="service.html?id=office-seal">Office Seal Acquisition</a>
+            <a href="service.html?id=tax-return">Tax Return Filing</a>
+            <a href="service.html?id=tax-registration">Tax Registration</a>
+          </div>
+        </div>
+        <div class="nav-item has-drop">
+          <a href="service.html?id=commercial-card" class="nav-link">Commercial Card <span class="caret">▼</span></a>
+          <div class="dropdown">
+            <a href="service.html?id=commercial-card">Card Acquisition</a>
+            <a href="service.html?id=commercial-card-renewal">Card Renewal</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="service.html?id=license" class="nav-link">License</a></div>
+        <div class="nav-item"><a href="service.html?id=rank" class="nav-link">Rank / Rating</a></div>
+        <div class="nav-item has-drop">
+          <a href="service.html?id=intl-oman" class="nav-link">International <span class="caret">▼</span></a>
+          <div class="dropdown">
+            <a href="service.html?id=intl-oman">Company Registration — Oman</a>
+            <a href="service.html?id=intl-uae">Company Registration — UAE</a>
+          </div>
+        </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">»</span><span class="current">Login / Sign Up</span></div>
+      <h1>My Account</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Manage your orders and documents in one place.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 40px;">
+    <div class="container">
+      <div class="auth-wrap">
+        <div class="form-card">
+          <div class="auth-tabs">
+            <button class="auth-tab active" data-panel="loginPanel" type="button">Login</button>
+            <button class="auth-tab" data-panel="registerPanel" type="button">Sign Up</button>
+          </div>
+
+          <div class="auth-panel active" id="loginPanel">
+            <div class="success-banner">✅ Login successful! (demo)</div>
+            <form novalidate>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="you@company.com" />
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="••••••••" />
+              </div>
+              <button type="submit" class="btn btn-navy">Login</button>
+              <p class="form-note" style="text-align:center;">Lorem ipsum dolor sit amet, consectetur.</p>
+            </form>
+          </div>
+
+          <div class="auth-panel" id="registerPanel">
+            <div class="success-banner">✅ Account created! (demo)</div>
+            <form novalidate>
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Your name" />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="you@company.com" />
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" placeholder="+1 555 000 0000" />
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="••••••••" />
+              </div>
+              <button type="submit" class="btn btn-wood">Create Account</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo logo-light"><span class="logo-mark">M</span> Meridian<span class="logo-accent" style="color: var(--wood);">Corporate</span></a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>📍 123 Business Ave, Suite 400, Metropolis</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="service.html?id=office-seal">Office Seal</a>
+        <a href="service.html?id=dissolution">Company Dissolution</a>
+        <a href="service.html?id=liquidation">Liquidation Termination</a>
+        <a href="service.html?id=board-renewal">Board Renewal / Change</a>
+        <a href="service.html?id=tax-return">Tax Return</a>
+        <a href="service.html?id=establishment">Company Registration</a>
+        <a href="service.html?id=brand">Brand Registration</a>
+        <a href="service.html?id=tax-registration">Tax Services</a>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="rule.html">Terms &amp; Conditions</a>
+        <a href="track.html">Track Order</a>
+        <a href="auth.html">Login / Sign Up</a>
+        <a href="packages.html">Packages</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <p>Mon–Fri: 9:00 – 17:00<br />Sat: 9:00 – 14:00</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Telegram">✈️</a>
+          <a href="#" aria-label="LinkedIn">💼</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 <span>Meridian Corporate</span>. All rights reserved.</div>
+  </footer>
+
+  <script src="lang.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

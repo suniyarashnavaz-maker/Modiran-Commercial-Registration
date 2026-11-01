@@ -1,0 +1,7 @@
+node_modules/
+_test/node_modules/
+data.json
+uploads/
+o.txt
+st.txt
+status.txt

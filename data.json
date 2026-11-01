@@ -1,0 +1,211 @@
+{
+ "orders": [
+  {
+   "id": "MC-2025-00123",
+   "customer": "John Smith",
+   "service": "Company Establishment",
+   "status": "progress",
+   "amount": 980,
+   "date": "2025-01-10"
+  },
+  {
+   "id": "MC-2025-00124",
+   "customer": "Sara Ahmed",
+   "service": "Brand Registration",
+   "status": "new",
+   "amount": 190,
+   "date": "2025-01-11"
+  },
+  {
+   "id": "MC-2025-00125",
+   "customer": "Omar Khalid",
+   "service": "Commercial Card Acquisition",
+   "status": "completed",
+   "amount": 350,
+   "date": "2025-01-08"
+  },
+  {
+   "id": "MC-2025-00126",
+   "customer": "Lina Haddad",
+   "service": "Tax Return Filing",
+   "status": "progress",
+   "amount": 220,
+   "date": "2025-01-12"
+  },
+  {
+   "id": "MC-2025-00127",
+   "customer": "Ali Reza",
+   "service": "Company Dissolution",
+   "status": "cancelled",
+   "amount": 480,
+   "date": "2025-01-05"
+  },
+  {
+   "id": "MC-2026-00128",
+   "customer": "Test User",
+   "service": "Company Establishment",
+   "status": "new",
+   "amount": 0,
+   "date": "2026-10-06"
+  },
+  {
+   "id": "MC-2026-00129",
+   "customer": "E2E Client",
+   "service": "Brand Registration",
+   "status": "new",
+   "amount": 0,
+   "date": "2026-10-06"
+  }
+ ],
+ "articles": [
+  {
+   "id": 1,
+   "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod",
+   "cat": "Registration",
+   "date": "2025-01-12"
+  },
+  {
+   "id": 2,
+   "title": "Duis aute irure dolor in reprehenderit in voluptate velit",
+   "cat": "Brand",
+   "date": "2025-01-05"
+  },
+  {
+   "id": 3,
+   "title": "Excepteur sint occaecat cupidatat non proident sunt in culpa",
+   "cat": "Trade",
+   "date": "2024-12-28"
+  },
+  {
+   "id": 4,
+   "title": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
+   "cat": "Licensing",
+   "date": "2024-12-15"
+  }
+ ],
+ "messages": [
+  {
+   "id": 1,
+   "kind": "contact",
+   "name": "John Smith",
+   "email": "john@example.com",
+   "phone": "+1 555 000 1111",
+   "service": "Company Registration",
+   "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+   "read": false,
+   "date": "2025-01-12"
+  },
+  {
+   "id": 2,
+   "kind": "consultation",
+   "name": "Sara Ahmed",
+   "email": "sara@example.com",
+   "phone": "+1 555 000 2222",
+   "service": "Brand & Industrial Design",
+   "text": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+   "read": false,
+   "date": "2025-01-11"
+  },
+  {
+   "id": 3,
+   "kind": "quick",
+   "name": "Omar Khalid",
+   "email": "",
+   "phone": "+1 555 000 3333",
+   "service": "Commercial Card",
+   "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+   "read": true,
+   "date": "2025-01-09"
+  },
+  {
+   "id": 4,
+   "kind": "quick",
+   "name": "Test User",
+   "email": "",
+   "phone": "+1 555 123 4567",
+   "service": "Company Establishment",
+   "text": "",
+   "read": false,
+   "date": "2026-10-06"
+  },
+  {
+   "id": 5,
+   "kind": "contact",
+   "name": "Contact Person",
+   "email": "cp@test.com",
+   "phone": "",
+   "service": "",
+   "text": "Hello there, testing.",
+   "read": false,
+   "date": "2026-10-06"
+  },
+  {
+   "id": 6,
+   "kind": "quick",
+   "name": "E2E Client",
+   "email": "",
+   "phone": "+98 912 000 1111",
+   "service": "Brand Registration",
+   "text": "",
+   "read": false,
+   "date": "2026-10-06"
+  }
+ ],
+ "users": [
+  {
+   "id": 1,
+   "name": "John Smith",
+   "email": "john@example.com",
+   "phone": "+1 555 000 1111",
+   "joined": "2024-11-02"
+  },
+  {
+   "id": 2,
+   "name": "Sara Ahmed",
+   "email": "sara@example.com",
+   "phone": "+1 555 000 2222",
+   "joined": "2024-12-14"
+  },
+  {
+   "id": 3,
+   "name": "Omar Khalid",
+   "email": "omar@example.com",
+   "phone": "+1 555 000 3333",
+   "joined": "2025-01-03"
+  },
+  {
+   "id": 4,
+   "name": "Smoke Tester",
+   "email": "smoke@test.com",
+   "phone": "+1 555 000 9999",
+   "joined": "2026-10-06",
+   "salt": "184b0f21f5a6fd6d4f4e055362744fa4",
+   "hash": "eccbd15272ce81243ba41369d079c83a114e1f1af56cc97bb99c76ba34611f12"
+  }
+ ],
+ "customServices": [],
+ "settings": {
+  "siteName": "Meridian Corporate",
+  "phone": "+1 (555) 010-2030",
+  "email": "hello@meridiancorp.example",
+  "hours": "Mon–Fri: 9:00 – 17:00 · Sat: 9:00 – 14:00"
+ },
+ "sessions": {
+  "96053233cdd1f06853746dcbaf526f39f6e2ddf385ffab26": {
+   "user": 4,
+   "exp": 1791317548266
+  },
+  "e4ed622a6345ee37b4b76d133658095ed7c1a29e44f89b50": {
+   "user": 4,
+   "exp": 1791317548315
+  },
+  "057307324c6587d36d96d8aaf33b4518037d2a01a997bdca": {
+   "admin": true,
+   "exp": 1791317548323
+  },
+  "de5a7d7839610e9ae2791aae6aaa6163cf2cb7a20490a804": {
+   "admin": true,
+   "exp": 1793564103733
+  }
+ }
+}

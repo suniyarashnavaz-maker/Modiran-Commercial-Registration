@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Handover Document — Meridian Corporate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #1d3357; --navy-dark: #142440; --navy-deep: #0d1930; --navy-soft: #2c4a7c;
+    --gray-50: #f5f6f8; --gray-100: #eef0f3; --gray-200: #e2e6ea; --gray-300: #cfd6dd;
+    --gray-500: #7b8794; --gray-600: #5b6675; --ink: #212b3a;
+    --wood: #c8a878; --wood-dark: #a9885a; --wood-light: #f3ead9; --wood-pale: #faf6ee;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Inter", "Vazirmatn", sans-serif; color: var(--ink); background: var(--gray-50); line-height: 1.6; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---- doc header ---- */
+  .doc-head { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%); color: #fff; padding: 56px 0 48px; }
+  .doc-head h1 { font-size: 2rem; font-weight: 800; }
+  .doc-head .fa-title { font-family: "Vazirmatn", sans-serif; direction: rtl; text-align: right; float: right; font-size: 1.5rem; font-weight: 700; color: var(--wood); }
+  .doc-head p { margin-top: 10px; color: rgba(255,255,255,0.75); max-width: 640px; }
+  .doc-head .fa-sub { font-family: "Vazirmatn", sans-serif; direction: rtl; text-align: right; float: right; max-width: 420px; color: rgba(255,255,255,0.7); }
+
+  section { padding: 44px 0; }
+  section > .wrap > h2 { font-size: 1.35rem; color: var(--navy); margin-bottom: 4px; }
+  section > .wrap > h2 .fa { font-family: "Vazirmatn", sans-serif; color: var(--wood-dark); font-size: 1.1rem; margin-inline-start: 10px; }
+  .rule { width: 56px; height: 4px; background: var(--wood); border-radius: 2px; margin: 10px 0 22px; }
+
+  /* ---- two-column EN/FA description ---- */
+  .desc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .desc-card { background: #fff; border: 1px solid var(--gray-200); border-radius: 14px; padding: 24px 26px; }
+  .desc-card h3 { font-size: 1rem; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .desc-card h3 .tag { font-size: 0.65rem; font-weight: 700; background: var(--navy); color: #fff; border-radius: 5px; padding: 2px 7px; letter-spacing: 0.05em; }
+  .fa-card { font-family: "Vazirmatn", sans-serif; direction: rtl; text-align: right; }
+  .fa-card h3 .tag { background: var(--wood-dark); }
+  .desc-card h4 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-500); margin: 16px 0 6px; }
+  .fa-card h4 { text-transform: none; letter-spacing: 0; font-size: 0.9rem; font-weight: 700; color: var(--navy); }
+  .desc-card ul { padding-left: 18px; font-size: 0.9rem; }
+  .fa-card ul { padding-left: 0; padding-right: 18px; }
+  .desc-card li { margin-bottom: 4px; }
+  .desc-card code { background: var(--gray-100); border-radius: 5px; padding: 1px 6px; font-size: 0.82em; }
+
+  /* ---- palette ---- */
+  .palette { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 18px; }
+  .swatch { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; overflow: hidden; }
+  .swatch .chip { height: 58px; }
+  .swatch div.txt { padding: 8px 12px; font-size: 0.78rem; }
+  .swatch .hex { font-weight: 700; color: var(--navy); }
+  .swatch .use { color: var(--gray-500); }
+
+  /* ---- page list ---- */
+  .pages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+  .page-item { background: #fff; border: 1px solid var(--gray-200); border-radius: 10px; padding: 10px 14px; font-size: 0.85rem; display: flex; justify-content: space-between; gap: 8px; }
+  .page-item b { color: var(--navy); }
+  .page-item span { color: var(--gray-500); font-size: 0.78rem; white-space: nowrap; }
+
+  /* ---- mockup gallery ---- */
+  .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .mock { background: #fff; border: 1px solid var(--gray-200); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  .mock.wide { grid-column: 1 / -1; }
+  .mock-label { padding: 10px 16px; background: var(--navy); color: #fff; font-size: 0.8rem; font-weight: 700; display: flex; justify-content: space-between; gap: 10px; }
+  .mock-label .fa { font-family: "Vazirmatn", sans-serif; color: var(--wood); font-weight: 500; }
+  .mock-body { padding: 18px; background: var(--gray-50); flex: 1; }
+
+  /* ---- mini components (scaled replicas of the real site) ---- */
+  .c-topbar { background: var(--navy-deep); color: #fff; font-size: 0.72rem; padding: 7px 14px; display: flex; justify-content: space-between; border-radius: 8px 8px 0 0; }
+  .c-topbar a { color: var(--wood); text-decoration: none; margin-inline-start: 12px; }
+  .c-lang { display: inline-flex; gap: 3px; margin-inline-start: 12px; }
+  .c-lang button { font-size: 0.62rem; font-weight: 700; border: 1px solid rgba(255,255,255,0.3); background: transparent; color: #fff; border-radius: 5px; padding: 1px 7px; cursor: default; }
+  .c-lang button.on { background: #fff; color: var(--navy); }
+  .c-nav { background: var(--navy); color: #fff; padding: 10px 14px; display: flex; align-items: center; gap: 14px; font-size: 0.72rem; }
+  .c-logo { font-weight: 800; display: flex; align-items: center; gap: 7px; white-space: nowrap; }
+  .c-logo .m { background: var(--wood); color: var(--navy-deep); width: 22px; height: 22px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; }
+  .c-logo em { color: var(--wood); font-style: normal; }
+  .c-nav .links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .c-nav .links span { opacity: 0.9; white-space: nowrap; }
+  .c-drop { background: #fff; color: var(--ink); border-radius: 0 0 10px 10px; margin: 0 14px; padding: 10px 14px; font-size: 0.7rem; box-shadow: 0 10px 24px rgba(13,25,48,0.18); }
+  .c-drop a { display: block; color: var(--gray-600); text-decoration: none; padding: 4px 0; }
+  .c-drop a:hover { color: var(--navy); }
+  .c-drop .t { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin-top: 6px; }
+
+  .c-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%); color: #fff; border-radius: 10px; padding: 26px 22px; position: relative; overflow: hidden; }
+  .c-hero::after { content: ""; position: absolute; inset: auto -40px -60px auto; width: 200px; height: 200px; border-radius: 50%; background: rgba(200,168,120,0.15); }
+  .c-hero .kicker { color: var(--wood); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .c-hero h3 { font-size: 1.25rem; margin: 8px 0; max-width: 300px; }
+  .c-hero p { font-size: 0.75rem; color: rgba(255,255,255,0.7); max-width: 320px; }
+  .c-btns { margin-top: 14px; display: flex; gap: 8px; }
+  .c-btn { font-size: 0.72rem; font-weight: 700; border-radius: 8px; padding: 8px 14px; text-decoration: none; display: inline-block; }
+  .c-btn.wood { background: var(--wood); color: var(--navy-deep); }
+  .c-btn.ghost { border: 1.5px solid rgba(255,255,255,0.4); color: #fff; }
+
+  .c-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .c-svc { background: #fff; border: 1px solid var(--gray-200); border-radius: 10px; padding: 14px; }
+  .c-svc .ic { width: 34px; height: 34px; border-radius: 9px; background: var(--wood-light); display: flex; align-items: center; justify-content: center; font-size: 1rem; margin-bottom: 8px; }
+  .c-svc b { font-size: 0.78rem; color: var(--navy); display: block; margin-bottom: 4px; }
+  .c-svc p { font-size: 0.68rem; color: var(--gray-500); }
+  .c-svc .more { font-size: 0.68rem; color: var(--wood-dark); font-weight: 700; display: inline-block; margin-top: 8px; }
+
+  .c-price { background: #fff; border: 1.5px solid var(--gray-200); border-radius: 12px; padding: 16px; text-align: center; position: relative; }
+  .c-price.hot { border-color: var(--wood); box-shadow: 0 10px 26px rgba(200,168,120,0.25); }
+  .c-price .badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--wood); color: var(--navy-deep); font-size: 0.6rem; font-weight: 800; border-radius: 999px; padding: 2px 10px; }
+  .c-price h4 { font-size: 0.8rem; color: var(--navy); }
+  .c-price .amt { font-size: 1.3rem; font-weight: 800; color: var(--navy); margin: 6px 0; }
+  .c-price .amt small { font-size: 0.65rem; color: var(--gray-500); font-weight: 500; }
+  .c-price ul { list-style: none; font-size: 0.68rem; color: var(--gray-600); margin: 8px 0 12px; }
+  .c-price li { padding: 3px 0; border-bottom: 1px dashed var(--gray-200); }
+  .c-price .c-btn { width: 100%; background: var(--navy); color: #fff; }
+  .c-price.hot .c-btn { background: var(--wood); color: var(--navy-deep); }
+
+  .c-form { background: #fff; border: 1px solid var(--gray-200); border-radius: 10px; padding: 16px; }
+  .c-form label { font-size: 0.68rem; font-weight: 700; color: var(--gray-600); display: block; margin: 8px 0 3px; }
+  .c-form input, .c-form select, .c-form textarea { width: 100%; font-family: inherit; font-size: 0.72rem; border: 1.5px solid var(--gray-300); border-radius: 8px; padding: 7px 10px; color: var(--ink); background: #fff; }
+  .c-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .c-form .c-btn { margin-top: 12px; background: var(--navy); color: #fff; width: 100%; }
+
+  .c-dropzone { border: 2px dashed var(--gray-300); border-radius: 12px; background: #fff; padding: 26px 16px; text-align: center; }
+  .c-dropzone .up { font-size: 1.6rem; }
+  .c-dropzone b { display: block; font-size: 0.8rem; color: var(--navy); margin-top: 6px; }
+  .c-dropzone span { font-size: 0.68rem; color: var(--gray-500); }
+  .c-file { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--gray-200); border-radius: 8px; padding: 8px 12px; margin-top: 10px; font-size: 0.7rem; }
+  .c-file .bar { flex: 1; height: 5px; background: var(--gray-200); border-radius: 3px; overflow: hidden; }
+  .c-file .bar i { display: block; height: 100%; width: 100%; background: var(--success, #2e7d4f); }
+  .c-file .ok { color: #2e7d4f; font-weight: 700; }
+
+  .c-track { background: #fff; border: 1px solid var(--gray-200); border-radius: 10px; padding: 16px; }
+  .c-steps { display: flex; justify-content: space-between; margin: 16px 0 6px; position: relative; }
+  .c-steps::before { content: ""; position: absolute; top: 9px; left: 8%; right: 8%; height: 3px; background: var(--gray-200); }
+  .c-step { position: relative; text-align: center; font-size: 0.6rem; color: var(--gray-500); width: 25%; }
+  .c-step i { display: block; width: 20px; height: 20px; border-radius: 50%; background: var(--gray-200); color: #fff; font-style: normal; font-size: 0.6rem; line-height: 20px; margin: 0 auto 5px; position: relative; z-index: 1; }
+  .c-step.done i { background: var(--wood); color: var(--navy-deep); font-weight: 800; }
+  .c-step.done { color: var(--navy); font-weight: 700; }
+
+  .c-blog { background: #fff; border: 1px solid var(--gray-200); border-radius: 10px; overflow: hidden; }
+  .c-blog .thumb { height: 74px; background: linear-gradient(135deg, var(--navy-soft), var(--navy-deep)); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+  .c-blog .bd { padding: 12px 14px; }
+  .c-blog .meta { font-size: 0.62rem; color: var(--gray-500); display: flex; gap: 10px; }
+  .c-blog b { display: block; font-size: 0.78rem; color: var(--navy); margin: 5px 0; }
+  .c-blog p { font-size: 0.68rem; color: var(--gray-500); }
+
+  .c-admin-login { max-width: 260px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 16px 40px rgba(13,25,48,0.18); }
+  .c-admin-login h4 { font-size: 0.9rem; color: var(--navy); text-align: center; }
+  .c-admin-login .sub { font-size: 0.65rem; color: var(--gray-500); text-align: center; margin: 2px 0 12px; }
+  .c-admin-login label { font-size: 0.65rem; font-weight: 700; color: var(--gray-600); display: block; margin: 7px 0 3px; }
+  .c-admin-login input { width: 100%; font-size: 0.7rem; border: 1.5px solid var(--gray-300); border-radius: 7px; padding: 7px 10px; }
+  .c-admin-login .c-btn { margin-top: 12px; width: 100%; background: var(--navy); color: #fff; }
+  .c-admin-login .note { font-size: 0.6rem; color: var(--gray-500); text-align: center; margin-top: 8px; }
+
+  .c-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+  .c-stat { background: #fff; border: 1px solid var(--gray-200); border-top: 3px solid var(--wood); border-radius: 9px; padding: 10px; text-align: center; }
+  .c-stat b { display: block; font-size: 1.05rem; color: var(--navy); }
+  .c-stat span { font-size: 0.6rem; color: var(--gray-500); }
+  .c-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 9px; overflow: hidden; font-size: 0.66rem; border: 1px solid var(--gray-200); }
+  .c-table th { text-align: left; background: var(--gray-100); color: var(--gray-500); font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 7px 10px; }
+  .c-table td { padding: 7px 10px; border-top: 1px solid var(--gray-100); color: var(--gray-600); }
+  .c-pill { display: inline-block; font-size: 0.58rem; font-weight: 700; border-radius: 999px; padding: 2px 9px; }
+  .c-pill.new { background: #e8f0fe; color: #1a56b0; }
+  .c-pill.prog { background: #fdf3e3; color: #9a6b15; }
+  .c-pill.done { background: #e6f4ea; color: #1e7e34; }
+
+  .c-footer { background: var(--navy-deep); color: rgba(255,255,255,0.75); border-radius: 10px; padding: 20px 18px; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 16px; font-size: 0.68rem; }
+  .c-footer h5 { color: #fff; font-size: 0.72rem; margin-bottom: 8px; }
+  .c-footer a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; padding: 2px 0; }
+  .c-footer .logo { font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .c-footer .logo em { color: var(--wood); font-style: normal; }
+  .c-footer .bottom { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 10px; font-size: 0.62rem; color: rgba(255,255,255,0.45); }
+
+  .c-rtl { direction: rtl; font-family: "Vazirmatn", sans-serif; }
+  .c-rtl .c-nav { justify-content: flex-start; }
+
+  .note { background: var(--wood-pale); border: 1px solid var(--wood-light); border-radius: 10px; padding: 12px 16px; font-size: 0.82rem; color: var(--gray-600); margin-top: 18px; }
+  .note b { color: var(--navy); }
+
+  @media (max-width: 860px) {
+    .desc-grid, .gallery { grid-template-columns: 1fr; }
+    .pages { grid-template-columns: 1fr 1fr; }
+    .palette { grid-template-columns: 1fr 1fr; }
+    .doc-head .fa-title, .doc-head .fa-sub { float: none; text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= DOC HEADER ================= -->
+<div class="doc-head">
+  <div class="wrap" style="overflow:hidden;">
+    <div class="fa-title">سند تحویل پروژه — ویرایش ۱.۰</div>
+    <h1>Meridian Corporate — Site Handover</h1>
+    <p>Complete description of the website: technology, design system, pages, and a visual mockup of every major component.</p>
+    <div class="fa-sub">توصیف کامل وب‌سایت: فناوری‌های به‌کاررفته، سیستم طراحی، فهرست صفحات و ماکاپ بصری از تمامی اجزای اصلی.</div>
+  </div>
+</div>
+
+<!-- ================= 1. DESCRIPTION ================= -->
+<section>
+  <div class="wrap">
+    <h2>1. Site Description <span class="fa">توصیف وب‌سایت</span></h2>
+    <div class="rule"></div>
+    <div class="desc-grid">
+
+      <!-- ENGLISH -->
+      <div class="desc-card">
+        <h3>English <span class="tag">EN</span></h3>
+
+        <h4>Programming languages &amp; technology</h4>
+        <ul>
+          <li><b>HTML5</b> — page structure (12 static pages)</li>
+          <li><b>CSS3</b> — hand-written styles, CSS custom properties (design tokens), Flexbox &amp; Grid, no framework</li>
+          <li><b>JavaScript (ES6, vanilla)</b> — navigation, trilingual i18n engine, dynamic service pages, file-upload UI, forms, order tracking, admin panel. No frameworks, no build step, no dependencies.</li>
+          <li><b>Backend:</b> Node.js server (<code>server.mjs</code>) — serves the pages and a JSON API for forms, real file uploads, order tracking, user accounts and the admin panel. Zero external dependencies.</li>
+          <li><b>Storage:</b> server-side <code>data.json</code> (orders, messages, articles, users, settings) + <code>uploads/</code> folder for customer documents; language preference remembered per browser</li>
+          <li><b>Fonts:</b> Inter (Latin) + Vazirmatn (Persian/Kurdian) via Google Fonts</li>
+          <li><b>Testing:</b> automated smoke test (plain Node.js, no dependencies) — 30 endpoint checks, all passing</li>
+        </ul>
+
+        <h4>Color scheme</h4>
+        <ul>
+          <li><b>Navy blue</b> <code>#1d3357</code> (deep <code>#0d1930</code>) — navbar, headers, primary buttons, footer</li>
+          <li><b>Gray</b> <code>#f5f6f8 → #5b6675</code> — backgrounds, borders, secondary text</li>
+          <li><b>Light wood</b> <code>#c8a878</code> (pale <code>#faf6ee</code>) — accents, highlights, active states, CTA buttons</li>
+        </ul>
+
+        <h4>Layout style</h4>
+        <ul>
+          <li>Responsive, mobile-first; centered 1200px container; hamburger menu under 900px</li>
+          <li>Sticky top bar (phone + language switcher) above a sticky navy navbar with 7 dropdown menus</li>
+          <li>Card-based sections: service cards, pricing tiers, blog cards, stat cards</li>
+          <li>Full <b>RTL/LTR</b> support — layout, arrows, carets and form alignment flip automatically for Persian &amp; Kurdish</li>
+          <li>Trilingual (EN / FA / KU) with instant in-page switching and per-browser memory</li>
+        </ul>
+
+        <h4>Pages (12 files, 34 addressable pages)</h4>
+        <ul>
+          <li>Home · Service (×22 variants via <code>?id=</code>) · Packages · Blog · About · Contact · Terms · Track Order · Login/Sign Up · Upload Documents · Consultation · Admin Panel</li>
+        </ul>
+
+        <h4>Key features</h4>
+        <ul>
+          <li>Drag-&amp;drop document upload with per-file progress and validation — files are stored on the server</li>
+          <li>Consultation booking form with service selection</li>
+          <li>Order tracking with visual status timeline (real order numbers, e.g. <code>MC-2026-00128</code>)</li>
+          <li>Customer accounts: sign up / log in (passwords hashed, session cookies)</li>
+          <li>Admin panel: dashboard stats, orders, trilingual service management, articles, messages, users, settings — all changes persist on the server (login with password <code>admin</code>, changeable via the <code>ADMIN_PASSWORD</code> environment variable)</li>
+        </ul>
+      </div>
+
+      <!-- PERSIAN -->
+      <div class="desc-card fa-card">
+        <h3>فارسی <span class="tag">FA</span></h3>
+
+        <h4>زبان‌ها و فناوری‌های برنامه‌نویسی</h4>
+        <ul>
+          <li><b>HTML5</b> — ساختار صفحات (۱۲ صفحهٔ استاتیک)</li>
+          <li><b>CSS3</b> — استایل‌نویسی دستی با متغیرهای CSS (Design Tokens)، Flexbox و Grid، بدون هیچ فریم‌ورکی</li>
+          <li><b>جاوااسکریپت (ES6، وانیلا)</b> — منو، موتور سه‌زبانی، صفحات پویای خدمات، رابط آپلود مدارک، فرم‌ها، پیگیری سفارش و پنل مدیریت. بدون فریم‌ورک، بدون مرحلهٔ Build و بدون وابستگی خارجی.</li>
+          <li><b>بک‌اند:</b> سرور Node.js (<code>server.mjs</code>) — ارائهٔ صفحات + API JSON برای فرم‌ها، آپلود واقعی مدارک، پیگیری سفارش، حساب کاربری و پنل مدیریت. بدون هیچ وابستگی خارجی.</li>
+          <li><b>ذخیره‌سازی:</b> روی سرور — فایل <code>data.json</code> (سفارش‌ها، پیام‌ها، مقالات، کاربران و تنظیمات) و پوشهٔ <code>uploads/</code> برای مدارک؛ زبان انتخابی در مرورگر به‌یاد سپرده می‌شود</li>
+          <li><b>فونت‌ها:</b> Inter (لاتین) + وزیرمتن (فارسی/کردی) از Google Fonts</li>
+          <li><b>تست:</b> تست خودکار دود (Node.js خالص، بدون وابستگی) — ۳۰ بررسی، همهٔ موفق</li>
+        </ul>
+
+        <h4>پالت رنگی</h4>
+        <ul>
+          <li><b>سرمه‌ای</b> <code>#1d3357</code> (تیره <code>#0d1930</code>) — نوار ناوبری، سربرگ‌ها، دکمه‌های اصلی و فوتر</li>
+          <li><b>خاکستری</b> <code>#f5f6f8 → #5b6675</code> — پس‌زمینه‌ها، حاشیه‌ها و متن‌های فرعی</li>
+          <li><b>چوب روشن</b> <code>#c8a878</code> (کمرنگ <code>#faf6ee</code>) — تأکیدها، حالت‌های فعال و دکمه‌های دعوت‌به‌عمل</li>
+        </ul>
+
+        <h4>سبک چیدمان</h4>
+        <ul>
+          <li>ریسپانسیو و موبایل‌محور؛ کانتینر مرکزی ۱۲۰۰ پیکسلی؛ منوی همبرگری زیر ۹۰۰ پیکسل</li>
+          <li>نوار بالایی چسبان (تلفن + جابه‌جای زبان) روی نوار ناوبری سرمه‌ای با ۷ منوی کشویی</li>
+          <li>بخش‌های کارت‌محور: کارت خدمات، پلن‌های قیمت، کارت بلاگ و کارت آمار</li>
+          <li>پشتیبانی کامل <b>راست‌چین/چپ‌چین</b> — چیدمان، فلش‌ها و فرم‌ها برای فارسی و کردی به‌صورت خودکار معکوس می‌شوند</li>
+          <li>سه‌زبانه (انگلیسی / فارسی / کردی) با جابه‌جایی فوری در همان صفحه و به‌یادسپاری زبان در هر مرورگر</li>
+        </ul>
+
+        <h4>صفحات (۱۲ فایل، ۳۴ صفحهٔ قابل‌دسترسی)</h4>
+        <ul>
+          <li>صفحهٔ اصلی · خدمات (۲۲ نسخه با <code>?id=</code>) · پکیج‌ها · بلاگ · درباره ما · تماس · قوانین · پیگیری سفارش · ورود/ثبت‌نام · آپلود مدارک · رزرو مشاوره · پنل مدیریت</li>
+        </ul>
+
+        <h4>امکانات کلیدی</h4>
+        <ul>
+          <li>آپلود مدارک با درگ‌اند‌دراپ، نوار پیشرفت و اعتبارسنجی هر فایل — فایل‌ها روی سرور ذخیره می‌شوند</li>
+          <li>فرم رزرو مشاوره با انتخاب نوع خدمت</li>
+          <li>پیگیری سفارش با تایم‌لاین بصری وضعیت (شمارهٔ واقعی سفارش، مثلاً <code>MC-2026-00128</code>)</li>
+          <li>حساب کاربری: ثبت‌نام / ورود (رمزها هش‌شده، نشست با کوکی)</li>
+          <li>پنل مدیریت: آمار داشبورد، سفارش‌ها، مدیریت سه‌زبان خدمات، مقالات، پیام‌ها، کاربران و تنظیمات — همهٔ تغییرات روی سرور ماندگار است (ورود با رمز <code>admin</code>؛ قابل تغییر از طریق متغیر محیطی <code>ADMIN_PASSWORD</code>)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- palette -->
+    <div class="palette">
+      <div class="swatch"><div class="chip" style="background:#1d3357"></div><div class="txt"><span class="hex">#1d3357</span><br><span class="use">Navy — primary / سرمه‌ای — رنگ اصلی</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#0d1930"></div><div class="txt"><span class="hex">#0d1930</span><br><span class="use">Navy deep — topbar/footer / سرمه‌ای تیره</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#f5f6f8; border-bottom:1px solid #e2e6ea"></div><div class="txt"><span class="hex">#f5f6f8</span><br><span class="use">Gray 50 — backgrounds / خاکستری — پس‌زمینه</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#5b6675"></div><div class="txt"><span class="hex">#5b6675</span><br><span class="use">Gray 600 — text / خاکستری — متن</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#c8a878"></div><div class="txt"><span class="hex">#c8a878</span><br><span class="use">Wood — accent / چوب روشن — تأکید</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#a9885a"></div><div class="txt"><span class="hex">#a9885a</span><br><span class="use">Wood dark — hover / چوب تیره — هاور</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#faf6ee; border-bottom:1px solid #f3ead9"></div><div class="txt"><span class="hex">#faf6ee</span><br><span class="use">Wood pale — soft fills / چوب کمرنگ</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#2e7d4f"></div><div class="txt"><span class="hex">#2e7d4f</span><br><span class="use">Success — status / رنگ موفقیت</span></div></div>
+    </div>
+
+    <!-- pages -->
+    <h4 style="font-size:0.82rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--gray-500); margin:26px 0 4px;">Page inventory <span style="font-family:'Vazirmatn'; text-transform:none; letter-spacing:0;">/ فهرست صفحات</span></h4>
+    <div class="pages">
+      <div class="page-item"><b>index.html</b><span>Home / صفحهٔ اصلی</span></div>
+      <div class="page-item"><b>service.html</b><span>×22 services / ۲۲ خدمت</span></div>
+      <div class="page-item"><b>packages.html</b><span>Pricing / پکیج‌ها</span></div>
+      <div class="page-item"><b>blog.html</b><span>Articles / بلاگ</span></div>
+      <div class="page-item"><b>about.html</b><span>About / درباره ما</span></div>
+      <div class="page-item"><b>contact.html</b><span>Contact / تماس</span></div>
+      <div class="page-item"><b>rule.html</b><span>Terms / قوانین</span></div>
+      <div class="page-item"><b>track.html</b><span>Track Order / پیگیری سفارش</span></div>
+      <div class="page-item"><b>auth.html</b><span>Login / Sign Up / ورود</span></div>
+      <div class="page-item"><b>upload.html</b><span>Upload Docs / آپلود مدارک</span></div>
+      <div class="page-item"><b>consultation.html</b><span>Consultation / مشاوره</span></div>
+      <div class="page-item"><b>admin.html</b><span>Admin Panel / پنل مدیریت</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2. COMPONENT MOCKUPS ================= -->
+<section style="background:#fff; border-top:1px solid var(--gray-200); border-bottom:1px solid var(--gray-200);">
+  <div class="wrap">
+    <h2>2. Component Mockups <span class="fa">ماکاپ اجزای سایت</span></h2>
+    <div class="rule"></div>
+
+    <div class="gallery">
+
+      <!-- Topbar + Navbar + Dropdown -->
+      <div class="mock wide">
+        <div class="mock-label"><span>Topbar, Navbar &amp; Dropdown Menu</span><span class="fa">نوار بالایی، ناوبری و منوی کشویی</span></div>
+        <div class="mock-body" style="padding:0;">
+          <div class="c-topbar">
+            <span>☎ +1 (555) 010-2030</span>
+            <span><a>Track Order</a><a>Login / Sign Up</a>
+              <span class="c-lang"><button class="on">EN</button><button>فا</button><button>کوردی</button></span>
+            </span>
+          </div>
+          <div class="c-nav">
+            <span class="c-logo"><span class="m">M</span> Meridian<em>Corporate</em></span>
+            <span class="links">
+              <span>Company Registration ▼</span><span>Brand Registration ▼</span><span>Newspaper Services ▼</span><span>Tax Services ▼</span><span>Commercial Card ▼</span><span>License</span><span>Rank / Rating</span><span>International ▼</span>
+            </span>
+          </div>
+          <div class="c-drop">
+            <a>Company Establishment</a>
+            <a>Company Dissolution</a>
+            <a>Liquidation Termination</a>
+            <div class="t">Changes</div>
+            <a>Board of Directors Renewal</a>
+            <a>Auditor Renewal</a>
+            <a>Address Change / Postal Code</a>
+            <a>P&amp;L Balance Approval</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero -->
+      <div class="mock">
+        <div class="mock-label"><span>Hero Section</span><span class="fa">بخش قهرمان (Hero)</span></div>
+        <div class="mock-body">
+          <div class="c-hero">
+            <div class="kicker">Company Registration &amp; Trading</div>
+            <h3>Company Registration &amp; Commercial Services</h3>
+            <p>Lorem ipsum dolor sit amet — all services fully online, no in-person visits.</p>
+            <div class="c-btns"><a class="c-btn wood">Book Free Consultation</a><a class="c-btn ghost">Upload Documents</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service cards -->
+      <div class="mock">
+        <div class="mock-label"><span>Service Cards</span><span class="fa">کارت‌های خدمات</span></div>
+        <div class="mock-body">
+          <div class="c-cards">
+            <div class="c-svc"><div class="ic">🏢</div><b>Company Establishment</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><span class="more">Learn more ←</span></div>
+            <div class="c-svc"><div class="ic">🏷️</div><b>Brand Registration</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><span class="more">Learn more ←</span></div>
+            <div class="c-svc"><div class="ic">🔏</div><b>Office Seal</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><span class="more">Learn more ←</span></div>
+            <div class="c-svc"><div class="ic">📉</div><b>Dissolution &amp; Liquidation</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><span class="more">Learn more ←</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing -->
+      <div class="mock">
+        <div class="mock-label"><span>Pricing / Packages</span><span class="fa">پلن‌ها و قیمت‌ها</span></div>
+        <div class="mock-body">
+          <div class="c-cards">
+            <div class="c-price"><h4>Starter</h4><div class="amt">$190 <small>USD</small></div><ul><li>Company registration</li><li>Economic code</li><li>Office seal</li></ul><a class="c-btn">Buy Package</a></div>
+            <div class="c-price hot"><span class="badge">Most Popular</span><h4>Professional</h4><div class="amt">$980 <small>USD</small></div><ul><li>VAT code</li><li>Workshop code</li><li>Letterhead design</li><li>Business card design</li></ul><a class="c-btn">Buy Package</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Consultation form -->
+      <div class="mock">
+        <div class="mock-label"><span>Consultation Form</span><span class="fa">فرم رزرو مشاوره</span></div>
+        <div class="mock-body">
+          <div class="c-form">
+            <div class="row">
+              <div><label>Full name *</label><input placeholder="e.g. John Smith" /></div>
+              <div><label>Phone number *</label><input placeholder="+1 555 000 0000" /></div>
+            </div>
+            <label>Select a subject *</label>
+            <select><option>Company Registration</option><option>Brand Registration</option><option>Tax Services</option></select>
+            <label>Message</label>
+            <textarea rows="3" placeholder="Lorem ipsum dolor sit amet…"></textarea>
+            <a class="c-btn">Request Consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upload -->
+      <div class="mock">
+        <div class="mock-label"><span>Document Upload</span><span class="fa">آپلود مدارک</span></div>
+        <div class="mock-body">
+          <div class="c-dropzone">
+            <div class="up">📁</div>
+            <b>Drag &amp; drop files here</b>
+            <span>or click to browse — PDF, JPG, PNG · max 10 MB</span>
+          </div>
+          <div class="c-file">📄 National_ID.pdf <span class="bar"><i></i></span> <span class="ok">✓ Uploaded</span></div>
+          <div class="c-file">🖼️ Photo.jpg <span class="bar"><i style="width:62%"></i></span> <span>62%</span></div>
+        </div>
+      </div>
+
+      <!-- Track order -->
+      <div class="mock">
+        <div class="mock-label"><span>Order Tracking</span><span class="fa">پیگیری سفارش</span></div>
+        <div class="mock-body">
+          <div class="c-track">
+            <label style="font-size:0.68rem; font-weight:700; color:var(--gray-600);">Order number</label>
+            <input style="width:100%; font-size:0.72rem; border:1.5px solid var(--gray-300); border-radius:8px; padding:7px 10px; margin-top:3px;" value="MC-2025-00123" />
+            <div class="c-steps">
+              <div class="c-step done"><i>✓</i>Received</div>
+              <div class="c-step done"><i>✓</i>In Review</div>
+              <div class="c-step done"><i>3</i>Filing</div>
+              <div class="c-step"><i>4</i>Completed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog -->
+      <div class="mock">
+        <div class="mock-label"><span>Blog Card &amp; Sidebar</span><span class="fa">کارت بلاگ و نوار کناری</span></div>
+        <div class="mock-body">
+          <div class="c-cards">
+            <div class="c-blog">
+              <div class="thumb">📰</div>
+              <div class="bd"><div class="meta"><span>📅 Jan 12, 2025</span><span>🏢 Registration</span></div><b>Lorem ipsum dolor sit amet, consectetur</b><p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+            </div>
+            <div class="c-form" style="background:var(--navy); border:none;">
+              <h4 style="color:#fff; font-size:0.8rem;">Subscribe to our newsletter</h4>
+              <p style="font-size:0.65rem; color:rgba(255,255,255,0.65); margin:6px 0 10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <input style="width:100%; font-size:0.7rem; border:1.5px solid rgba(255,255,255,0.25); background:rgba(255,255,255,0.1); color:#fff; border-radius:8px; padding:7px 10px;" placeholder="Your email" />
+              <a class="c-btn wood" style="margin-top:8px; width:100%;">Subscribe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Admin login -->
+      <div class="mock">
+        <div class="mock-label"><span>Admin — Login Screen</span><span class="fa">پنل مدیریت — صفحهٔ ورود</span></div>
+        <div class="mock-body" style="background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);">
+          <div class="c-admin-login">
+            <div style="text-align:center; margin-bottom:10px;"><span class="c-logo" style="justify-content:center;"><span class="m">M</span> Meridian<em>Corporate</em></span></div>
+            <h4>Admin Panel</h4>
+            <div class="sub">Sign in to manage your site</div>
+            <label>Password</label><input type="password" value="••••••••" />
+            <a class="c-btn">Sign In</a>
+            <div class="note" style="margin-top:10px; padding:6px 10px;">Password-only login — default: "admin" (changeable)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Admin dashboard -->
+      <div class="mock">
+        <div class="mock-label"><span>Admin — Dashboard &amp; Orders</span><span class="fa">پنل مدیریت — داشبورد و سفارش‌ها</span></div>
+        <div class="mock-body">
+          <div class="c-stats">
+            <div class="c-stat"><b>5</b><span>Total Orders</span></div>
+            <div class="c-stat"><b>3</b><span>Pending</span></div>
+            <div class="c-stat"><b>$350</b><span>Revenue</span></div>
+            <div class="c-stat"><b>2</b><span>New Messages</span></div>
+          </div>
+          <table class="c-table">
+            <thead><tr><th>Order</th><th>Customer</th><th>Service</th><th>Status</th><th>$</th></tr></thead>
+            <tbody>
+              <tr><td><b>MC-2025-00123</b></td><td>John Smith</td><td>Company Establishment</td><td><span class="c-pill prog">In Progress</span></td><td>980</td></tr>
+              <tr><td><b>MC-2025-00124</b></td><td>Sara Ahmed</td><td>Brand Registration</td><td><span class="c-pill new">New</span></td><td>190</td></tr>
+              <tr><td><b>MC-2025-00125</b></td><td>Omar Khalid</td><td>Commercial Card</td><td><span class="c-pill done">Completed</span></td><td>350</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- RTL preview -->
+      <div class="mock">
+        <div class="mock-label"><span>RTL Mode (Persian / Kurdish)</span><span class="fa">حالت راست‌چین (فارسی / کردی)</span></div>
+        <div class="mock-body">
+          <div class="c-rtl">
+            <div class="c-nav" style="border-radius:8px 8px 0 0;">
+              <span class="c-logo"><span class="m">M</span> مریدین<em>کورپوریت</em></span>
+              <span class="links"><span>ثبت شرکت ▼</span><span>ثبت برند ▼</span><span>خدمات روزنامه ▼</span><span>خدمات مالیاتی ▼</span></span>
+            </div>
+            <div class="c-drop" style="margin:0; border-radius:0 0 8px 8px; text-align:right;">
+              <a>تاسیس شرکت</a><a>انحلال شرکت</a><a>ختم تصفیه شرکت</a>
+            </div>
+            <div class="c-hero" style="margin-top:10px; padding:18px;">
+              <div class="kicker">ثبت شرکت و امور تجاری</div>
+              <h3 style="font-size:1.05rem;">ثبت شرکت و خدمات بازرگانی</h3>
+              <p>هەموو خزمەتگوزارییەکان بە تەواوی ئۆنلاین، بەبێ سەردانی ڕوو بە ڕوو</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="mock">
+        <div class="mock-label"><span>Footer</span><span class="fa">فوتر (پایهٔ صفحه)</span></div>
+        <div class="mock-body">
+          <div class="c-footer">
+            <div>
+              <div class="logo">Meridian<em>Corporate</em></div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p style="margin-top:8px;">📍 123 Business Ave, Suite 400, Metropolis</p>
+            </div>
+            <div>
+              <h5>Services</h5>
+              <a>Office Seal</a><a>Company Dissolution</a><a>Board Renewal / Change</a><a>Tax Return</a><a>Company Registration</a>
+            </div>
+            <div>
+              <h5>Quick Links</h5>
+              <a>About Us</a><a>Contact Us</a><a>Terms &amp; Conditions</a><a>Track Order</a><a>Packages</a>
+            </div>
+            <div class="bottom">© 2025 Meridian Corporate. All rights reserved. · Mon–Fri: 9:00 – 17:00 · Sat: 9:00 – 14:00</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note">
+      <b>Note / یادداشت:</b> The mockups above are scaled replicas of the live components — open the linked pages for full-size, fully interactive versions (language switching, dropdowns, upload, forms and admin panel all work).<br />
+      <span style="font-family:'Vazirmatn'; direction:rtl; display:inline-block; text-align:right;">ماکاپ‌های بالا نسخهٔ کوچک‌شدهٔ اجزای واقعی سایت هستند — برای نسخهٔ تمام‌قد و تعاملی، صفحات مربوطه را باز کنید (جابه‌جای زبان، منوهای کشویی، آپلود، فرم‌ها و پنل مدیریت همگی کار می‌کنند).</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

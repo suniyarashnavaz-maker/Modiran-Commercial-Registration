@@ -1,0 +1,11 @@
+{
+  "name": "meridian-corporate",
+  "version": "1.0.0",
+  "description": "Meridian Corporate — company registration & trading services site (static frontend + Node JSON API backend)",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node smoke.mjs"
+  },
+  "license": "MIT"
+}
